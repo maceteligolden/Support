@@ -1,0 +1,87 @@
+import mongoose from 'mongoose';
+
+
+const connect = async (dbname: string, dbusername: string, dbpassword: string) => {
+
+  try{
+
+    await mongoose.connect(`mongodb+srv://${dbusername}:${dbpassword}@${dbname}.5niks.mongodb.net/oceanlife?retryWrites=true&w=majority`)
+
+    console.log('database connected')
+
+  }catch(err){
+
+    console.log(err)
+
+  }
+
+}
+
+const createData =  (model: any, data: any) => {
+
+  try{
+
+    return model.create(data);
+
+  }catch(err){
+
+    return err
+
+  }
+
+}
+
+const readData = (model: any, data: any, select?: any) => {
+  try{
+
+    return model.find(data, select)
+
+  }catch(err: any){
+
+    return err.message;
+
+  }
+}
+
+const readsingleData = (model: any, data: any, select?: any) => {
+  try{
+
+    return model.findOne(data, select)
+
+  }catch(err: any){
+
+    return err.message;
+
+  }
+}
+
+const updateData = (model: any, keyword: any, data: any) => {
+  try{
+
+    return model.findByIdAndUpdate(keyword, data)
+
+  }catch(err: any){
+    return err.message
+  }
+}
+
+const deleteData = (model: any, keyword: any) => {
+  try{
+
+    return model.findByIdAndRemove(keyword)
+
+  }catch(err: any){
+    
+      return err.message
+    
+  }
+}
+
+export {
+  connect,
+  createData,
+  readData,
+  readsingleData,
+  updateData,
+  deleteData
+}
