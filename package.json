@@ -2,9 +2,9 @@
   "name": "tsoceanlife_backend",
   "version": "1.0.0",
   "description": "",
-  "main": "index.ts",
+  "main": "src/index.ts",
   "scripts": {
-    "serve": "nodemon index.ts"
+    "serve": "nodemon src/index.ts"
   },
   "author": "",
   "license": "ISC",
