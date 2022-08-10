@@ -1,7 +1,7 @@
 import mongoose, { Schema } from 'mongoose';
 
 
-const roleschema: Schema = new Schema({
+const Ticket_typeSchema: Schema = new Schema({
     name: {
         type: String,
         required: true
@@ -21,4 +21,4 @@ const roleschema: Schema = new Schema({
     }
 })
 
-export default mongoose.model('Roles', roleschema)
+export default mongoose.model('Ticket_type', Ticket_typeSchema)

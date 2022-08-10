@@ -1,7 +1,6 @@
 import mongoose, {Schema} from 'mongoose';
-import Log from '../models/Log/log.model';
 
-const logschema: Schema = new Schema<Log>({
+const logschema: Schema = new Schema({
     user: {
         type: Schema.Types.ObjectId,
         ref: 'Users',
@@ -15,7 +14,10 @@ const logschema: Schema = new Schema<Log>({
     },
     updated_at: {
         type: Date,
-        required: true
+        required: true,
+        defualt: function(){
+            return Date.now()
+        }
     }
 })
 

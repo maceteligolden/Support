@@ -1,8 +1,20 @@
 import mongoose, { Schema } from 'mongoose';
 
 
-const roleschema: Schema = new Schema({
-    name: {
+const customerSchema: Schema = new Schema({
+    firstname: {
+        type: String,
+        required: true
+    },
+    lastname: {
+        type: String,
+        required: true
+    },
+    email: {
+        type: String,
+        required: true
+    },
+    phone: {
         type: String,
         required: true
     },
@@ -21,4 +33,4 @@ const roleschema: Schema = new Schema({
     }
 })
 
-export default mongoose.model('Roles', roleschema)
+export default mongoose.model('Customer', customerSchema)

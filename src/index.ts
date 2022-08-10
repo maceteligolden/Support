@@ -1,3 +1,4 @@
+import "reflect-metadata";
 require('dotenv').config();
 import express, {Application, NextFunction, Request, Response} from 'express';
 import moduleRouters from './common/router';

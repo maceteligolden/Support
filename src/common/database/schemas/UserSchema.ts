@@ -1,7 +1,6 @@
 import mongoose, { Schema } from 'mongoose';
-import User from '../models/Users/User.model';
 
-const userschema: Schema =   new Schema<User>({
+const userschema: Schema =   new Schema({
   firstname: {
     type: String,
     required: true
@@ -56,11 +55,17 @@ const userschema: Schema =   new Schema<User>({
     default: false
   },
   created_at: {
-    type: Date
+    type: Date,
+    default: function(){
+      return Date.now()
+    }
   },
   updated_at: {
     type: Date,
-    required: true
+    required: true,
+    default: function(){
+      return Date.now()
+    }
   }
 })
 

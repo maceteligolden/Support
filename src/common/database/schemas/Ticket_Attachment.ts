@@ -1,10 +1,14 @@
 import mongoose, { Schema } from 'mongoose';
 
 
-const roleschema: Schema = new Schema({
+const Ticket_attachmentSchema: Schema = new Schema({
     name: {
         type: String,
         required: true
+    },
+    ticket: {
+        type: Schema.Types.ObjectId,
+        ref: 'Ticket'
     },
     created_at: {
         type: Date,
@@ -21,4 +25,4 @@ const roleschema: Schema = new Schema({
     }
 })
 
-export default mongoose.model('Roles', roleschema)
+export default mongoose.model('Ticket_attachment', Ticket_attachmentSchema)
