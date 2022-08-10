@@ -1,8 +1,6 @@
 import { injectable } from "tsyringe";
-import { IViewlog } from "../../models";
-import IAddLog from "../../models/Log/Addlog.model";
-import LogSchema from "../../schemas/LogSchema";
-import { createData, readData } from "../../utils";
+import LogSchema from "../../../common/database/schemas/LogSchema";
+import { createData, readData } from "../../../common/utils";
 
 @injectable()
 export default class LogRespository{
@@ -18,8 +16,8 @@ export default class LogRespository{
     }
 
     //get logs on database
-    async getLog(data: {}): Promise<IViewlog>{
-        const log: IViewlog = await readData(LogSchema, data)
+    async getLog(data: any) {
+        const log = await readData(LogSchema, data)
         return log;
     }
 

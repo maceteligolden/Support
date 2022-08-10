@@ -21,7 +21,7 @@ export default class UserRepository {
     }
 
     async getUser(payload: any){
-        const User = await readsingleData(UserSchema, payload).populate("role");
+        const User = await readsingleData(UserSchema, payload);
         return User;
     }
 
