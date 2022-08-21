@@ -21,38 +21,10 @@ const userschema: Schema =   new Schema({
     type: Number,
     required: true
   },
-  country: {
-    type: String,
-    default: null
-  },
-  city: {
-    type: String,
-    default: null
-  },
-  address: {
-    type: String,
-    default: null
-  },
-  status: {
-    type: Boolean,
-    default: true
-  },
   role: {
     type: Schema.Types.ObjectId,
     ref: 'Roles',
     required: true
-  },
-  wallet: {
-    type: Schema.Types.ObjectId,
-    ref: 'Wallet',
-  },
-  nextkin: {
-    type: Schema.Types.ObjectId,
-    ref: 'Nextkin',
-  },
-  verified: {
-    type: Boolean,
-    default: false
   },
   created_at: {
     type: Date,

@@ -10,7 +10,7 @@ const ticketSchema: Schema = new Schema({
         type: Schema.Types.ObjectId,
         ref: 'User'
     },
-    Customer: {
+    customer: {
         type: Schema.Types.ObjectId,
         ref: 'Customer'
     },

@@ -2,19 +2,18 @@ import { injectable } from "tsyringe";
 import LogRespository from "../repositories/LogRepository";
 
 @injectable()
-export default class UserLogin{
+export default class TicketAssigned{
     constructor(
         private logRepository: LogRespository
     ){
 
     }
 
-    async execute(email: string, id: string){
+    async execute(Ticket: string, author: string){
 
-        const message = `${email} logged in `;
+        const message = `${Ticket} was assigned to ${author} `;
 
         const payload = {
-            user: id,
             detail: message
         }
 
