@@ -12,7 +12,7 @@ export default class ViewCustomers{
 
     async execute(){
       
-        const Customer = await this.customerRepository.getData({});
+        const Customer = await this.customerRepository.getDatas({});
 
         return Customer
     }
